@@ -1,7 +1,6 @@
 const API_BASE_URL = "http://localhost:8081/api/v1";
 
 export const api = {
-  // Categories API
   async getAllCategories() {
     const res = await fetch(`${API_BASE_URL}/category/getAll`,{
        next:{
@@ -44,7 +43,6 @@ export const api = {
     return res.json();
   },
 
-  // News API
   async getAllNews() {
     const res = await fetch(`${API_BASE_URL}/news/getAll`,{
       next:{

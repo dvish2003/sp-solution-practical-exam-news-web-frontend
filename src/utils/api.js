@@ -3,7 +3,11 @@ const API_BASE_URL = "http://localhost:8081/api/v1";
 export const api = {
   // Categories API
   async getAllCategories() {
-    const res = await fetch(`${API_BASE_URL}/category/getAll`);
+    const res = await fetch(`${API_BASE_URL}/category/getAll`,{
+       next:{
+        revalidate:60
+      }
+    });
     const data = await res.json();
     return data.data || [];
   },
@@ -42,7 +46,11 @@ export const api = {
 
   // News API
   async getAllNews() {
-    const res = await fetch(`${API_BASE_URL}/news/getAll`);
+    const res = await fetch(`${API_BASE_URL}/news/getAll`,{
+      next:{
+        revalidate:60
+      }
+    });
     const data = await res.json();
     return data.data || [];
   },
